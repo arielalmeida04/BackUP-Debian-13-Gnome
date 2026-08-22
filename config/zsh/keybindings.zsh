@@ -26,3 +26,21 @@ _fzf_edit_widget() {
 
 zle -N _fzf_edit_widget
 bindkey '^F' _fzf_edit_widget
+
+# Ctrl+G: launch lazygit
+_lazygit_widget() {
+  lazygit
+  zle redisplay
+}
+
+zle -N _lazygit_widget
+bindkey '^G' _lazygit_widget
+
+# Alt+D: launch lazydocker
+_lazydocker_widget() {
+  lazydocker
+  zle redisplay
+}
+
+zle -N _lazydocker_widget
+bindkey '^[d' _lazydocker_widget
