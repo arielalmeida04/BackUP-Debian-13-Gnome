@@ -1,0 +1,7 @@
+git
+gcc
+g++
+make
+cmake
+gdb
+neovim
