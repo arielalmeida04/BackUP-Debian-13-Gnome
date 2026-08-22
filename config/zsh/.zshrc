@@ -29,8 +29,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 # ---------- Dotfiles ----------
 
-DOTFILES_ZSH="${${(%):-%x}:A:h}"
-export DOTFILES_DIR="${DOTFILES_ZSH:h}"
+export DOTFILES_DIR="$HOME/.config/zsh"
+DOTFILES_ZSH="$DOTFILES_DIR"
 
 [[ -f "$DOTFILES_ZSH/aliases.zsh" ]] &&
   source "$DOTFILES_ZSH/aliases.zsh"
@@ -75,7 +75,6 @@ fi
 # ---------- FZF ----------
 
 if command -v fzf &>/dev/null; then
-
   export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --info=inline"
 
   export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
@@ -91,11 +90,10 @@ if command -v fzf &>/dev/null; then
     --exclude /sys \
     --exclude /dev \
     2>/dev/null"
-
 fi
 
 
 # ---------- Powerlevel10k ----------
 
-[[ -f "$DOTFILES_ZSH/.p10k.zsh" ]] &&
-  source "$DOTFILES_ZSH/.p10k.zsh"
+[[ -f "$HOME/.p10k.zsh" ]] &&
+  source "$HOME/.p10k.zsh"
