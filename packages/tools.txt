@@ -1,0 +1,5 @@
+git-delta
+lazygit
+gh
+glow
+dust
