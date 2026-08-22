@@ -5,12 +5,10 @@
 
 # ---------- Oh My Zsh ----------
 
-# ---------- Dotfiles ----------
-# ---------- Dotfiles ----------
+export ZSH="$HOME/.oh-my-zsh"
 
-export DOTFILES_DIR="$HOME/debian-bootstrap"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-DOTFILES_ZSH="$DOTFILES_DIR/config/zsh"
 plugins=(
   git
   zsh-autosuggestions
@@ -29,6 +27,21 @@ plugins=(
 source "$ZSH/oh-my-zsh.sh"
 
 
+# ---------- Dotfiles ----------
+
+DOTFILES_ZSH="${${(%):-%x}:A:h}"
+export DOTFILES_DIR="${DOTFILES_ZSH:h}"
+
+[[ -f "$DOTFILES_ZSH/aliases.zsh" ]] &&
+  source "$DOTFILES_ZSH/aliases.zsh"
+
+[[ -f "$DOTFILES_ZSH/functions.zsh" ]] &&
+  source "$DOTFILES_ZSH/functions.zsh"
+
+[[ -f "$DOTFILES_ZSH/keybindings.zsh" ]] &&
+  source "$DOTFILES_ZSH/keybindings.zsh"
+
+
 # ---------- PATH ----------
 
 export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
@@ -43,22 +56,6 @@ export VISUAL="zed --wait"
 # ---------- Git ----------
 
 export GIT_PAGER="delta"
-
-
-# ---------- Dotfiles ----------
-
-export DOTFILES_DIR="$HOME/debian-bootstrap"
-
-DOTFILES_ZSH="$DOTFILES_DIR/config/zsh"
-
-[[ -f "$DOTFILES_ZSH/aliases.zsh" ]] &&
-  source "$DOTFILES_ZSH/aliases.zsh"
-
-[[ -f "$DOTFILES_ZSH/functions.zsh" ]] &&
-  source "$DOTFILES_ZSH/functions.zsh"
-
-[[ -f "$DOTFILES_ZSH/keybindings.zsh" ]] &&
-  source "$DOTFILES_ZSH/keybindings.zsh"
 
 
 # ---------- Zoxide ----------
