@@ -1,0 +1,4 @@
+.zshrc.local
+.env
+*.log
+.DS_Store
