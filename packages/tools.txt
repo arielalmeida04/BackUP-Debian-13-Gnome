@@ -2,4 +2,4 @@ git-delta
 lazygit
 gh
 glow
-dust
+du-dust
